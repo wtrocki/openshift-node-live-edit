@@ -9,8 +9,9 @@ ENV NODE_APP=/opt/app \
 
 WORKDIR $NODE_APP
 
-ADD ./app $NODE_APP
 RUN npm install forever 
+
+ADD ./app $NODE_APP
 
 RUN npm install && \
     useradd -u 1001 nodeapp && \
