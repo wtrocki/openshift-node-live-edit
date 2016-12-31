@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo $NODE_LIVE_EDIT
+PATH=$PATH:./node_modules/.bin
 
 if [ ! -z $NODE_LIVE_EDIT ]; then
     echo "Starting node server in live edit mode"
-    node node_modules/forever/bin/forever --watch index.js .
+    forever --watch index.js .
 elif [ ! -z $NODE_APP_DEBUG ]; then
     echo "Starting node server in debug mode"
     node debug index.js
