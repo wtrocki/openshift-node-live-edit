@@ -1,9 +1,9 @@
 var express = require("express");
-
+var message = require("./lib/message");
 var app = express();
 
 app.get('/', function(req, res){
-  res.send('Hello World');
+  res.send(message);
 });
 
 if (!module.parent) {
