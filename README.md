@@ -53,10 +53,11 @@ To connect with any local machine debugger we would need to forward local port t
 
 ## Alternatives to custom entrypoint
 
-Instead of using bash script as entrypoint we can change OpenShift deployment config as bellow:
+Instead of using bash script as entrypoint we can change OpenShift deployment config to include command:
 
-        command: [ "node", "--debug-brk", "index.js" ]
-        
+    command: [ "node", "--debug-brk", "index.js" ]
+
+For more info see: https://docs.openshift.com/enterprise/3.1/dev_guide/deployments.html#pod-based-lifecycle-hook
 
 ## Variables
 
