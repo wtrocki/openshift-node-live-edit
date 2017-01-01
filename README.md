@@ -52,11 +52,11 @@ To connect with any local machine debugger we would need to forward local port t
 
 > NODE_LIVE_EDIT
 
-Live edit and reload your app
+Set to true to live edit and reload your app
 
 > NODE_APP_DEBUG
 
-Debug your app
+Set to true to debug your app
 
 # Notes
 
