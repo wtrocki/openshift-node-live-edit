@@ -2,17 +2,12 @@ FROM centos:centos6
 
 RUN yum -y update && yum clean all
 RUN yum -y install epel-release && \
-    yum -y install npm node && yum clean all
+    yum -y install npm node rsync && yum clean all
 
-ENV NODE_APP=/opt/app \
-    NODE_LIVE_EDIT=true
-
+ENV NODE_APP=/opt/app 
 WORKDIR $NODE_APP
 
-## TODO Move this to script.
 RUN npm install forever 
-RUN yum -y install rsync
-
 ADD ./app $NODE_APP
 
 RUN npm install && \
