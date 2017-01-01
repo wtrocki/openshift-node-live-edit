@@ -36,6 +36,11 @@ Live edit works thanks to customized image. See `Dockerfile` for more info.
 Depending on network speed update may take from 2 to 10 seconds.
 You can sync more than one container at the time.
 
+## Making it more generic
+
+Following example is using forever, but we can use any other process manager or other live reloading solutions. 
+Another good example would be to run `grunt watch` command, but this would require dev dependencies to be installed in the image. 
+
 ## Debugging 
 
 If `NODE_APP_DEBUG` variable is set node process would run in debug mode.
@@ -45,6 +50,13 @@ To connect with any local machine debugger we would need to forward local port t
     oc port-forward <pod> :5858
 
 > *Note:* You may need to change or remove liveness and readiness probes to avoid killing pod when debugging.
+
+## Alternatives to custom entrypoint
+
+Instead of using bash script as entrypoint we can change OpenShift deployment config as bellow:
+
+        command: [ "node", "--debug-brk", "index.js" ]
+        
 
 ## Variables
 

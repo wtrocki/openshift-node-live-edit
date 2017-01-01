@@ -4,11 +4,11 @@ PATH=$PATH:./node_modules/.bin
 
 if [ ! -z $NODE_LIVE_EDIT ]; then
     echo "Starting node server in live edit mode"
-    forever --watch index.js .
+    exec forever --watch index.js .
 elif [ ! -z $NODE_APP_DEBUG ]; then
     echo "Starting node server in debug mode"
-    node debug index.js
+    exec node --debug-brk index.js
 else
     echo "Starting node server"
-    node index.js 
+    exec node index.js 
 fi
