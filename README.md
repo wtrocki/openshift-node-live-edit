@@ -1,12 +1,10 @@
-# openshift-node-live-edit
+## OpenShift Live Edit and Debugger
 
-Live edit and debug your openshift node.js applications without building docker images
-
-# Live edit
+Live edit and debug your OpenShift node.js applications without building docker images.
 
 ![](http://i.giphy.com/l4JyN1r2FMpLpgj16.gif)
 
-Edit your files within your node.js app and they would automatically synced with your instance in cloud.
+Edit your files within your node.js app and all changes would automatically synced with your instance in cloud.
 
 ## How to run demo
 
@@ -61,4 +59,4 @@ Set to true to debug your app
 # Notes
 
 Created just for demo purposes. Do not use this in production :)
-This particular example shows how to sync node.js apps but rsync and forever are generic enough to use them with any other technology. I used similar approach to live reload archives and binary files. 
+Example shows how to sync node.js apps but rsync and forever are generic enough to use them with any other technology. I used similar approach to live reload archives and binary files. 
